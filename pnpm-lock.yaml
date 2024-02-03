@@ -9,6 +9,11 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0
 
+devDependencies:
+  typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
+
 packages:
 
   /js-tokens@4.0.0:
@@ -28,3 +33,9 @@ packages:
     dependencies:
       loose-envify: 1.4.0
     dev: false
+
+  /typescript@5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true

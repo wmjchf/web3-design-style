@@ -4,11 +4,14 @@
   "description": "web3时代的宠儿",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init:ts": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dogwang",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }

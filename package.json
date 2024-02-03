@@ -4,7 +4,8 @@
   "description": "web3时代的宠儿",
   "main": "index.js",
   "scripts": {
-    "init:ts": "echo \"Error: no test specified\" && exit 1"
+    "init:ts": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "author": "dogwang",
   "license": "ISC",
@@ -12,6 +13,15 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "eslint": "^8.56.0",
+    "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
+    "mini-css-extract-plugin": "^2.8.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
   }
 }

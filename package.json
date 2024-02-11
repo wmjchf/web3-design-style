@@ -11,10 +11,13 @@
   "author": "dogwang",
   "license": "ISC",
   "dependencies": {
+    "@tanstack/react-query": "^5.18.1",
     "antd": "^5.14.0",
     "core-js": "3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "viem": "2.x",
+    "wagmi": "^2.5.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",

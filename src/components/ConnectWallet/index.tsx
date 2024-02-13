@@ -7,7 +7,6 @@ export const ConnectWallet = () => {
   const account = useAccount();
 
   const { isConnected } = account;
-
   if (isConnected) return <Account />;
   return <WalletOptions />;
 };

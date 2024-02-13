@@ -25,7 +25,7 @@ const WalletOption: FC<IWalletOption> = ({ connector, onClick }) => {
 
 export const WalletOptions = () => {
   const { connectors, connect } = useConnect();
-
+  console.log(connectors, "erere");
   return connectors.map((connector) => (
     <WalletOption
       key={connector.uid}

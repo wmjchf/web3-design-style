@@ -12,11 +12,11 @@ export const Account = () => {
   const { disconnect } = useDisconnect();
   const { data: ensName } = useEnsName({ address });
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
-  const result = useReadContract({
-    functionName: "getName",
-    address: "0x0B32a3F8f5b7E5d315b9E52E640a49A89d89c820",
-    abi: ChangeNameJSON.abi,
-  });
+  // const result = useReadContract({
+  //   functionName: "getName",
+  //   address: "0x0B32a3F8f5b7E5d315b9E52E640a49A89d89c820",
+  //   abi: ChangeNameJSON.abi,
+  // });
 
   return (
     <div>

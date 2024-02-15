@@ -11,13 +11,14 @@
   "author": "dogwang",
   "license": "ISC",
   "dependencies": {
-    "@tanstack/react-query": "^5.18.1",
+    "@lens-protocol/react-web": "2.0.0-alpha.30",
+    "@lens-protocol/wagmi": "3.0.0-alpha.27",
     "antd": "^5.14.0",
     "core-js": "3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "viem": "2.x",
-    "wagmi": "^2.5.5"
+    "viem": "^1.0.0",
+    "wagmi": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",

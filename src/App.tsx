@@ -1,11 +1,12 @@
 import React from "react";
-import { Basic } from "./layout/Basic";
 import { Providers } from "./Provider";
+import { Route } from "./route";
+import "./style/global.less";
 
 export const App = () => {
   return (
     <Providers>
-      <Basic></Basic>
+      <Route></Route>
     </Providers>
   );
 };

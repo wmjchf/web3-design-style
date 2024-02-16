@@ -26,18 +26,27 @@ dependencies:
   ethers:
     specifier: ^5.7.2
     version: 5.7.2
+  immer:
+    specifier: ^10.0.3
+    version: 10.0.3
   react:
     specifier: ^18.2.0
     version: 18.2.0
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-router-dom:
+    specifier: ^6.22.0
+    version: 6.22.0(react-dom@18.2.0)(react@18.2.0)
   viem:
     specifier: ^1.21.4
     version: 1.21.4(typescript@5.3.3)
   wagmi:
     specifier: ^1.4.13
-    version: 1.4.13(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
+    version: 1.4.13(immer@10.0.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
+  zustand:
+    specifier: ^4.5.0
+    version: 4.5.0(immer@10.0.3)(react@18.2.0)
 
 devDependencies:
   '@babel/cli':
@@ -2171,7 +2180,7 @@ packages:
       '@lens-protocol/react-web': 2.0.0-alpha.30(@apollo/client@3.8.10)(react-dom@18.2.0)(react@18.2.0)
       '@lens-protocol/shared-kernel': 0.11.0-alpha.9
       viem: 1.21.4(typescript@5.3.3)
-      wagmi: 1.4.13(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
+      wagmi: 1.4.13(immer@10.0.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2547,6 +2556,11 @@ packages:
       rc-util: 5.38.1(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@remix-run/router@1.15.0:
+    resolution: {integrity: sha512-HOil5aFtme37dVQTB6M34G95kPM3MMuqSmIRVCC52eKV+Y/tGSqw9P3rWhlAx6A+mz+MoX+XxsGsNJbaI5qCgQ==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@safe-global/safe-apps-provider@0.18.2(typescript@5.3.3):
@@ -3172,7 +3186,7 @@ packages:
       - zod
     dev: false
 
-  /@wagmi/core@1.4.13(react@18.2.0)(typescript@5.3.3)(viem@1.21.4):
+  /@wagmi/core@1.4.13(immer@10.0.3)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4):
     resolution: {integrity: sha512-ytMCvXbBOgfDu9Qw67279wq/jNEe7EZLjLyekX7ROnvHRADqFr3lwZI6ih41UmtRZAmXAx8Ghyuqy154EjB5mQ==}
     peerDependencies:
       typescript: '>=5.0.4'
@@ -3186,7 +3200,7 @@ packages:
       eventemitter3: 4.0.7
       typescript: 5.3.3
       viem: 1.21.4(typescript@5.3.3)
-      zustand: 4.5.0(react@18.2.0)
+      zustand: 4.5.0(immer@10.0.3)(react@18.2.0)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -5935,6 +5949,10 @@ packages:
     dev: true
     optional: true
 
+  /immer@10.0.3:
+    resolution: {integrity: sha512-pwupu3eWfouuaowscykeckFmVTpqbzW+rXFCX8rQLkZzM9ftBmU/++Ra+o+L27mz03zJTlyV4UUr+fdKNffo4A==}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -7929,6 +7947,29 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
+  /react-router-dom@6.22.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-z2w+M4tH5wlcLmH3BMMOMdrtrJ9T3oJJNsAlBJbwk+8Syxd5WFJ7J5dxMEW0/GEXD1BBis4uXRrNIz3mORr0ag==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.15.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.22.0(react@18.2.0)
+    dev: false
+
+  /react-router@6.22.0(react@18.2.0):
+    resolution: {integrity: sha512-q2yemJeg6gw/YixRlRnVx6IRJWZD6fonnfZhN1JIOhV2iJCPeRNSH3V1ISwHf+JWcESzLC3BOLD1T07tmO5dmg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.15.0
+      react: 18.2.0
+    dev: false
+
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -9000,7 +9041,7 @@ packages:
       - zod
     dev: false
 
-  /wagmi@1.4.13(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4):
+  /wagmi@1.4.13(immer@10.0.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4):
     resolution: {integrity: sha512-AScVYFjqNt1wMgL99Bob7MLdhoTZ3XKiOZL5HVBdy4W1sh7QodA3gQ8IsmTuUrQ7oQaTxjiXEhwg7sWNrPBvJA==}
     peerDependencies:
       react: '>=17.0.0'
@@ -9013,7 +9054,7 @@ packages:
       '@tanstack/query-sync-storage-persister': 4.36.1
       '@tanstack/react-query': 4.36.1(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query-persist-client': 4.36.1(@tanstack/react-query@4.36.1)
-      '@wagmi/core': 1.4.13(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
+      '@wagmi/core': 1.4.13(immer@10.0.3)(react@18.2.0)(typescript@5.3.3)(viem@1.21.4)
       abitype: 0.8.7(typescript@5.3.3)
       react: 18.2.0
       typescript: 5.3.3
@@ -9408,7 +9449,7 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
-  /zustand@4.5.0(react@18.2.0):
+  /zustand@4.5.0(immer@10.0.3)(react@18.2.0):
     resolution: {integrity: sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -9423,6 +9464,7 @@ packages:
       react:
         optional: true
     dependencies:
+      immer: 10.0.3
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false

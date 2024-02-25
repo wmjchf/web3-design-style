@@ -1,9 +1,26 @@
-.component__list{
-    width: 300px;
-    height: 100%;
-    :global{
-        .ant-tabs{
-            height: 100%;
-        }
+.component__list {
+  width: 300px;
+  height: 100%;
+
+  padding-right: 24px;
+  :global {
+    .ant-tabs {
+      height: 100%;
     }
+  }
+  .title {
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tab__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

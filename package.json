@@ -13,11 +13,13 @@
   "dependencies": {
     "@tanstack/react-query": "^5.18.1",
     "antd": "^5.14.0",
+    "classnames": "^2.5.1",
     "core-js": "3",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "use-debounce": "^10.0.0",
     "viem": "2.x",
     "wagmi": "^2.5.5"
   },

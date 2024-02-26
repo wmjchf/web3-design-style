@@ -1,10 +1,13 @@
-import React, { useRef, useMemo, useState } from "react";
-import { useDebouncedCallback } from "use-debounce";
+import React, { useRef, useMemo, useState, useContext } from "react";
+import { useThrottledCallback } from "use-debounce";
 import { Calibration } from "@/components/Calibration";
+import { TargetBox } from "../TargetBox";
+import { Context } from "../../context";
 import styles from "./index.less";
 
-export const CanvasRender = () => {
+export const WorkArea = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { canvasId, allType } = useContext(Context);
   const [scaleNum, setScale] = useState(1);
   const [dragstate, setDragState] = useState({ x: 0, y: 0 });
   const [diffmove, setDiffMove] = useState({
@@ -42,6 +45,7 @@ export const CanvasRender = () => {
           },
           move: true,
         });
+
         setDragState((prev) => {
           return {
             x: prev.x + diffx,
@@ -77,7 +81,7 @@ export const CanvasRender = () => {
     };
   }, []);
 
-  const throttleMove = useDebouncedCallback(mousemovefn, 500);
+  const throttleMove = useThrottledCallback(mousemovefn, 0);
 
   return (
     <div
@@ -100,6 +104,13 @@ export const CanvasRender = () => {
           multiple={scaleNum}
         />
       </div>
+      <TargetBox
+        dragState={dragstate}
+        setDragState={setDragState}
+        scaleNum={scaleNum}
+        canvasId={canvasId}
+        allType={allType}
+      />
     </div>
   );
 };

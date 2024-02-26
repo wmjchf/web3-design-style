@@ -3,23 +3,14 @@ import { Tabs } from "antd";
 import classNames from "classnames";
 import template from "@/materials/base/template";
 import { SourceBox } from "../SourceBox";
+
 import styles from "./index.less";
 
 const { TabPane } = Tabs;
 
-interface IComponentList {
-  canvasId: string;
-}
-export const ComponentList: React.FC<IComponentList> = (prop) => {
-  const { canvasId } = prop;
+interface IComponentList {}
+export const ComponentList: React.FC<IComponentList> = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const allTemplateType = useMemo(() => {
-    const arr: string[] = [];
-    template.forEach((v) => {
-      arr.push(v.type);
-    });
-    return arr;
-  }, [template]);
 
   const changeCollapse = useMemo(() => {
     return (collapsed: boolean) => {
@@ -69,7 +60,7 @@ export const ComponentList: React.FC<IComponentList> = (prop) => {
               <div className={styles.content}>
                 {template.map((value, i) => {
                   return (
-                    <SourceBox item={value} key={i} canvasId={canvasId}>
+                    <SourceBox item={value} key={i}>
                       {/* <DynamicEngine
                       {...value}
                       config={
@@ -88,7 +79,7 @@ export const ComponentList: React.FC<IComponentList> = (prop) => {
               <div className={styles.content}>
                 {template.map((value, i) => {
                   return (
-                    <SourceBox item={value} key={i} canvasId={canvasId}>
+                    <SourceBox item={value} key={i}>
                       {/* <DynamicEngine
                       {...value}
                       config={
@@ -107,7 +98,7 @@ export const ComponentList: React.FC<IComponentList> = (prop) => {
               <div className={styles.content}>
                 {template.map((value, i) => {
                   return (
-                    <SourceBox item={value} key={i} canvasId={canvasId}>
+                    <SourceBox item={value} key={i}>
                       {/* <DynamicEngine
                       {...value}
                       config={

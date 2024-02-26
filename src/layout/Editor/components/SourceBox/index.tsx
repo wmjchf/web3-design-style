@@ -4,18 +4,16 @@ import schema from "@/materials/schema";
 import { ITemplate } from "@/materials/common";
 import styles from "./index.less";
 
-
 interface TargetBoxProps {
   item: ITemplate;
   children: ReactNode;
-  canvasId: string;
 }
 
 export const SourceBox = memo((props: TargetBoxProps) => {
   const { item } = props;
 
   const [{ isDragging }, drag] = useDrag({
-    type:"box",
+    type: "box",
     item: {
       type: item.type,
       config: schema[item.type as keyof typeof schema].config,

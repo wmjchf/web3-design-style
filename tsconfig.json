@@ -5,8 +5,7 @@
       "@/*": ["./src/*"]
     },
     "esModuleInterop": true,
-    "lib": ["esnext", "DOM"],
-    "types": ["./types/global.d.ts"]
+    "lib": ["esnext", "DOM"]
   },
   "include": ["src/**/*"]
 }

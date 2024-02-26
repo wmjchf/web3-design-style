@@ -4,6 +4,7 @@ import { DndProvider } from "react-dnd";
 import template from "@/materials/base/template";
 import { ComponentList } from "./components/ComponentList";
 import { WorkArea } from "./components/WorkArea";
+import { Header } from "./components/Header";
 import { Context } from "./context";
 import styles from "./index.less";
 
@@ -29,6 +30,7 @@ export const EditorLayout: FC<IEditor> = () => {
             canvasId: "abc",
           }}
         >
+          <Header></Header>
           <div className={styles.editor__container}>
             <ComponentList></ComponentList>
             <WorkArea></WorkArea>

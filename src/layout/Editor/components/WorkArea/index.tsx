@@ -7,7 +7,7 @@ import styles from "./index.less";
 
 export const WorkArea = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { canvasId, allType } = useContext(Context);
+  const { state } = useContext(Context);
   const [scaleNum, setScale] = useState(1);
   const [dragstate, setDragState] = useState({ x: 0, y: 0 });
   const [diffmove, setDiffMove] = useState({
@@ -92,7 +92,6 @@ export const WorkArea = () => {
       onMouseMove={throttleMove}
       onMouseUp={mouseupfn}
       onMouseLeave={mouseupfn}
-      onWheel={onwheelFn}
     >
       <div className={styles.tickMarkTop}>
         <Calibration direction="up" id="calibrationUp" multiple={scaleNum} />
@@ -108,8 +107,8 @@ export const WorkArea = () => {
         dragState={dragstate}
         setDragState={setDragState}
         scaleNum={scaleNum}
-        canvasId={canvasId}
-        allType={allType}
+        canvasId={state?.canvasId}
+        allType={state?.allType}
       />
     </div>
   );

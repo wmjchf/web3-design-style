@@ -6,6 +6,7 @@
   "scripts": {
     "init:ts": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack server --config ./webpack/dev.config.js",
+    "build:pro": "webpack --config ./webpack/prod.config.js",
     "prepare": "husky"
   },
   "author": "dogwang",
@@ -20,7 +21,9 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
+    "react-grid-layout": "^1.4.4",
     "use-debounce": "^10.0.0",
+    "uuid": "^9.0.1",
     "viem": "2.x",
     "wagmi": "^2.5.5"
   },

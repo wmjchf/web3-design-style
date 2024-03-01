@@ -13,7 +13,7 @@ export const SourceBox = memo((props: TargetBoxProps) => {
   const { item } = props;
 
   const [{ isDragging }, drag] = useDrag({
-    type: "box",
+    type: item.type,
     item: {
       type: item.type,
       config: schema[item.type as keyof typeof schema].config,

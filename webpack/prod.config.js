@@ -1,21 +1,12 @@
-import merge from "webpack-merge";
+/* eslint-disable @typescript-eslint/no-var-requires */
 
-import common from "./common.config.js";
+const { merge } = require("webpack-merge");
+
+const common = require("./common.config.js");
 
 const config = merge(common, {
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        vendors: {
-          name: `vendors`,
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-          filename: "js/common/[name].[contenthash].js",
-        },
-      },
-    },
-  },
+  mode: "development",
+  devtool: "source-map",
 });
 
 module.exports = config;

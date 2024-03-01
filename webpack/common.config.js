@@ -96,6 +96,19 @@ const config = {
     }),
     new CleanWebpackPlugin(),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          name: `vendors`,
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          filename: "js/common/[name].[contenthash].js",
+        },
+      },
+    },
+  },
 };
 
 module.exports = config;

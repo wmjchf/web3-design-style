@@ -1,11 +1,20 @@
 import React from "react";
 
-interface IEditorContext {
+export interface IState {
   canvasId: string;
   allType: string;
+  pointData: PointData[];
 }
 
-export const Context = React.createContext<IEditorContext>({
-  canvasId: "",
+interface IEditorContext {
+  state: IState;
+  dispatch: React.Dispatch;
+}
+
+export const initStata = {
+  canvasId: "abc",
   allType: [],
-});
+  pointData: [],
+};
+
+export const Context = React.createContext<IEditorContext>();

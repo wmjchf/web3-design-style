@@ -383,10 +383,10 @@ const Drag: React.FC<IProps> = (props) => {
   }, [refresh]);
 
   useEffect(() => {
-    window.addEventListener("mouseup", () => {
+    dragBox.current.addEventListener("mouseup", () => {
       isDown.current = false;
     });
-    window.addEventListener("mousemove", onMouseMove);
+    dragBox.current.addEventListener("mousemove", onMouseMove);
   }, []);
 
   return (

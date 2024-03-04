@@ -49,7 +49,7 @@ export const EditorLayout: FC<IEditor> = () => {
     ...initStata,
     allType: allTemplateType,
   });
-  console.log(state, "erwrw");
+  // console.log(state, "erw");
   return (
     <div className={styles.editor}>
       <DndProvider backend={HTML5Backend}>

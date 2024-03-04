@@ -21,10 +21,13 @@ export const SourceBox = memo((props: TargetBoxProps) => {
       editableEl: schema[item.type as keyof typeof schema].editData,
       category: item.category,
       x: item.x || 0,
+      hAuto: item.hAuto,
     },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
+    collect: (monitor) => {
+      return {
+        isDragging: monitor.isDragging(),
+      };
+    },
   });
 
   const containerStyle: CSSProperties = useMemo(

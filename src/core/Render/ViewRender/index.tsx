@@ -12,9 +12,13 @@ interface IViewRender {
 export const ViewRender: React.FC<IViewRender> = (prop) => {
   const { pointData } = prop;
 
+  const hAutoStyle = {
+    height: "auto",
+  };
+
   return (
     <div className={styles.view__render} id="view__render">
-      {pointData.map((item) => {
+      {pointData?.map((item) => {
         return (
           <Drag
             key={item.id}
@@ -23,11 +27,12 @@ export const ViewRender: React.FC<IViewRender> = (prop) => {
             pos={[item.point.x, item.point.y]}
             size={[item.point.w, item.point.h]}
             style={{
-              height: "auto",
+              ...(item.point.hAuto ? hAutoStyle : {}),
             }}
           >
             <DynamicEngine {...item.item}></DynamicEngine>
           </Drag>
+          // <></>
         );
       })}
     </div>

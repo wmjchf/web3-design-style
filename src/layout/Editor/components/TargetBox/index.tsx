@@ -21,6 +21,7 @@ interface ITargetBox {
 }
 export const TargetBox: React.FC<ITargetBox> = (prop) => {
   const { scaleNum, dragState, canvasId, allType } = prop;
+
   const { dispatch, state } = useContext(Context);
   const [canvasRect, setCanvasRect] = useState<number[]>([]);
   const [{ isOver }, drop] = useDrop({
@@ -50,6 +51,7 @@ export const TargetBox: React.FC<ITargetBox> = (prop) => {
             w: item.w,
             h: item.h,
             isBounded: true,
+            hAuto: item.hAuto,
           },
           status: "inToCanvas",
         },

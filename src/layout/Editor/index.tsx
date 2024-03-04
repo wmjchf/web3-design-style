@@ -1,10 +1,11 @@
-import React, { FC, useMemo, useCallback, useReducer } from "react";
+import React, { FC, useMemo, useCallback, useReducer, useRef } from "react";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
 import template from "@/materials/base/template";
 import { ComponentList } from "./components/ComponentList";
 import { WorkArea } from "./components/WorkArea";
 import { Header } from "./components/Header";
+import { RightSetting, IRightSettingRef } from "./components/RightSetting";
 import { Context, IState, initStata } from "./context";
 import styles from "./index.less";
 
@@ -49,6 +50,7 @@ export const EditorLayout: FC<IEditor> = () => {
     ...initStata,
     allType: allTemplateType,
   });
+  const rightSettingRef = useRef<IRightSettingRef>();
   // console.log(state, "erw");
   return (
     <div className={styles.editor}>
@@ -59,10 +61,15 @@ export const EditorLayout: FC<IEditor> = () => {
             dispatch,
           }}
         >
-          <Header></Header>
+          <Header
+            onPageSetting={() => {
+              rightSettingRef.current?.handleOpen();
+            }}
+          ></Header>
           <div className={styles.editor__container}>
             <ComponentList></ComponentList>
             <WorkArea></WorkArea>
+            <RightSetting ref={rightSettingRef}></RightSetting>
           </div>
         </Context.Provider>
       </DndProvider>
